@@ -1,0 +1,38 @@
+{
+  "name": "chartfox",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "setup": "electron-builder",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=images/icon.png --prune=true --out=build",
+    "package-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --icon=images/icon.png --prune=true --out=build",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=images/icon.png --prune=true --out=build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "build": {
+    "appId": "com.chartfox.app",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "images/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "installerIcon": "images/icon.ico",
+      "uninstallerIcon": "images/icon.ico",
+      "uninstallDisplayName": "ChartFox-Uninstaller",
+      "license": "license.md",
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^19.0.10",
+    "electron-builder": "^23.3.3",
+    "electron-packager": "^15.5.1"
+  }
+}
