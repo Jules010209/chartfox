@@ -22,9 +22,7 @@ app.whenReady().then(async () => {
     createWindow();
 
     app.on('activate', () => {
-        if(BrowserWindow.getAllWindows().length === 0) {
-            createWindow();
-        }
+        if(BrowserWindow.getAllWindows().length === 0) return createWindow();
     });
 });
 
